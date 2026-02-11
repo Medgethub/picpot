@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Velora Gallery</title>
+
+<style>
+
+/* ===== GLOBAL ===== */
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial, Helvetica, sans-serif;}
+
+body{
+background:#0e0e0e;
+color:white;
+overflow-x:hidden;
+}
+
+a{text-decoration:none;color:inherit}
+
+/* ===== AGE MODAL ===== */
+.age-modal{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,0.95);
+display:flex;
+align-items:center;
+justify-content:center;
+z-index:999;
+}
+
+.age-box{
+background:#111;
+padding:40px;
+border-radius:15px;
+text-align:center;
+max-width:400px;
+box-shadow:0 0 40px rgba(255,0,90,0.5);
+}
+
+.age-box h2{
+color:#ff0055;
+margin-bottom:20px;
+}
+
+.age-box button{
+margin:10px;
+padding:12px 25px;
+border:none;
+cursor:pointer;
+border-radius:30px;
+font-weight:bold;
+}
+
+.btn-enter{
+background:#ff0055;
+color:white;
+}
+
+.btn-exit{
+background:#444;
+color:white;
+}
+
+/* ===== NAVBAR ===== */
+nav{
+background:#111;
+padding:15px 30px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:sticky;
+top:0;
+z-index:10;
+}
+
+.logo{
+font-size:22px;
+font-weight:bold;
+color:#ff0055;
+}
+
+nav ul{
+list-style:none;
+display:flex;
+gap:20px;
+}
+
+/* ===== HERO ===== */
+.hero{
+height:70vh;
+background:linear-gradient(to right, #000000dd, #000000dd),
+url('https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e');
+background-size:cover;
+background-position:center;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:20px;
+}
+
+.hero h1{
+font-size:40px;
+color:#ff0055;
+}
+
+.hero p{
+margin-top:10px;
+color:#ccc;
+}
+
+/* ===== GALLERY ===== */
+.gallery{
+padding:60px 40px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.gallery img{
+width:100%;
+height:350px;
+object-fit:cover;
+border-radius:15px;
+transition:0.3s;
+}
+
+.gallery img:hover{
+transform:scale(1.05);
+box-shadow:0 0 25px rgba(255,0,90,0.6);
+}
+
+/* ===== FOOTER ===== */
+footer{
+background:#111;
+padding:40px 30px;
+margin-top:50px;
+}
+
+.footer-links{
+display:flex;
+gap:30px;
+flex-wrap:wrap;
+}
+
+.footer-links a{
+color:#aaa;
+font-size:14px;
+}
+
+footer p{
+margin-top:20px;
+color:#666;
+font-size:13px;
+}
+
+/* ===== PAGES ===== */
+.section{
+padding:60px 30px;
+max-width:900px;
+margin:auto;
+}
+
+.section h2{
+color:#ff0055;
+margin-bottom:20px;
+}
+
+.section p{
+line-height:1.7;
+color:#ccc;
+margin-bottom:15px;
+}
+
+</style>
+</head>
+<body>
+
+<!-- AGE GATE -->
+<div class="age-modal" id="ageModal">
+<div class="age-box">
+<h2>18+ Adult Content</h2>
+<p>You must be at least 18 years old to enter this website.</p>
+<button class="btn-enter" onclick="enterSite()">I am 18+</button>
+<button class="btn-exit" onclick="exitSite()">Exit</button>
+</div>
+</div>
+
+<!-- NAVBAR -->
+<nav>
+<div class="logo">VELORA</div>
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#gallery">Gallery</a></li>
+<li><a href="#terms">Terms</a></li>
+<li><a href="#privacy">Privacy</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+<div>
+<h1>Luxury Private Gallery</h1>
+<p>Exclusive premium visual experience</p>
+</div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery" id="gallery">
+<img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330">
+<img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1">
+<img src="https://images.unsplash.com/photo-1517841905240-472988babdf9">
+<img src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df">
+<img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e">
+<img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb">
+</section>
+
+<!-- TERMS -->
+<section class="section" id="terms">
+<h2>Terms of Service</h2>
+<p>By accessing this website, you confirm that you are 18 years of age or older.</p>
+<p>This website contains adult-oriented material. All models are 18 years or older.</p>
+<p>Any unauthorized copying or redistribution of content is strictly prohibited.</p>
+</section>
+
+<!-- PRIVACY -->
+<section class="section" id="privacy">
+<h2>Privacy Policy</h2>
+<p>We respect your privacy. No personal data is sold or shared.</p>
+<p>Cookies may be used to improve user experience and advertising performance.</p>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+<h2>Contact</h2>
+<p>Email: contact@veloragallery.com</p>
+<p>For copyright or DMCA inquiries please contact us directly.</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+<div class="footer-links">
+<a href="#terms">Terms</a>
+<a href="#privacy">Privacy</a>
+<a href="#contact">Contact</a>
+</div>
+<p>© 2025 Velora Gallery. All rights reserved. 18+ Only.</p>
+</footer>
+
+<script>
+
+function enterSite(){
+document.getElementById("ageModal").style.display="none";
+}
+
+function exitSite(){
+window.location.href="https://google.com";
+}
+
+</script>
+
+</body>
+</html>
